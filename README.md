@@ -1,4 +1,4 @@
-# !DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -32,7 +32,7 @@
             padding: 5%;
         }
         .message {
-            font-size: 5vw; /* Adaptatif en fonction de l'écran */
+            font-size: 5vw;
             font-weight: bold;
             text-align: center;
             width: 90%;
@@ -40,10 +40,11 @@
         #codeInput {
             margin-top: 20px;
             padding: 15px;
-            font-size: 3vw; /* Adaptatif */
+            font-size: 3vw;
             text-align: center;
             border: 3px solid black;
             width: 50%;
+            ime-mode: disabled; /* Désactiver les suggestions clavier */
         }
         #error-message {
             color: red;
@@ -62,17 +63,21 @@
         <p id="error-message"></p>
     </div>
 
+    <audio id="keypress-sound">
+        <source src="https://www.soundjay.com/button/beep-07.wav" type="audio/wav">
+    </audio>
+
     <script>
         // Ouvrir en plein écran automatiquement
         function openFullscreen() {
             let elem = document.documentElement;
             if (elem.requestFullscreen) {
                 elem.requestFullscreen();
-            } else if (elem.mozRequestFullScreen) { // Firefox
+            } else if (elem.mozRequestFullScreen) { 
                 elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, Opera
+            } else if (elem.webkitRequestFullscreen) { 
                 elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { // IE/Edge
+            } else if (elem.msRequestFullscreen) { 
                 elem.msRequestFullscreen();
             }
         }
@@ -103,10 +108,19 @@
             }
         }, 500);
 
-        // Code secret pour débloquer
+        // Activer le pavé numérique et ajouter un son à chaque touche pressée
+        document.getElementById("codeInput").addEventListener("keydown", function(event) {
+            let allowedKeys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "Enter", "Backspace"];
+            if (!allowedKeys.includes(event.key)) {
+                event.preventDefault();
+            }
+            document.getElementById("keypress-sound").play();
+        });
+
+        // Vérifier le code secret
         document.getElementById("codeInput").addEventListener("keyup", function(event) {
             if (event.key === "Enter") {
-                if (this.value === "1234") {  // Change le code ici
+                if (this.value === "1234") {  
                     document.body.innerHTML = "<h1 style='color: black; text-align: center; margin-top: 20%; font-size: 5vw;'>✅ Système restauré</h1>";
                 } else {
                     document.getElementById("error-message").innerText = "Code incorrect !";
@@ -127,4 +141,4 @@
     </script>
 
 </body>
-</html>deux
+</html>
