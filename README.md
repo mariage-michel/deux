@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            user-select: none; /* Désactive la sélection de texte */
         }
         html, body {
             width: 100vw;
@@ -44,7 +45,7 @@
             text-align: center;
             border: 3px solid black;
             width: 50%;
-            ime-mode: disabled; /* Désactiver les suggestions clavier */
+            ime-mode: disabled;
         }
         #error-message {
             color: red;
@@ -83,16 +84,17 @@
         }
         openFullscreen();
 
-        // Désactiver la souris et le clic droit
+        // Désactiver la souris, le clic droit et la sélection de texte
         document.addEventListener("contextmenu", event => event.preventDefault());
-        document.addEventListener("mousemove", event => event.preventDefault());
         document.addEventListener("mousedown", event => event.preventDefault());
         document.addEventListener("mouseup", event => event.preventDefault());
+        document.addEventListener("mousemove", event => event.preventDefault());
 
-        // Désactiver certaines touches (Alt+F4, F12, Escape, etc.)
+        // Désactiver certaines touches (Échap, Alt+F4, F12, etc.)
         document.addEventListener("keydown", function(event) {
-            if (["F12", "Escape", "Alt", "Meta", "Control", "Shift"].includes(event.key)) {
+            if (["F12", "Escape", "Alt", "Meta", "Control", "Shift", "Tab"].includes(event.key)) {
                 event.preventDefault();
+                return false;
             }
         });
 
@@ -142,3 +144,4 @@
 
 </body>
 </html>
+ 
