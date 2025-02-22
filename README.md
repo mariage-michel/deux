@@ -200,7 +200,3 @@
 
         // Reforcer le plein écran toutes les 2 secondes
         setInterval(openFullscreen, 2000);
-    </script>
-</body>
-</html>
- 
